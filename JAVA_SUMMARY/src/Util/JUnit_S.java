@@ -12,7 +12,6 @@ import org.junit.jupiter.api.Test;
  * 3.无返回值
  * 4.无形参
  *
- *123
  */
 public class JUnit_S {
 

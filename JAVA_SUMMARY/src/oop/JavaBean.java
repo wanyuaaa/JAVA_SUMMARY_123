@@ -1,5 +1,6 @@
 package oop;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 /**
@@ -39,6 +40,10 @@ import java.io.Serializable;
  *
  */
 public class JavaBean implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 3185729881877223594L;
+
     private String name; // 属性一般定义为private
     private int age;
 
