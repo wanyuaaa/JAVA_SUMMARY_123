@@ -23,11 +23,33 @@ public class Run_S {
         MyThread2 myThread2 = new MyThread2();
         myThread1.start();
         myThread2.start();
+
+        //创建匿名子类对象
+        new Thread(){
+            public void run() {
+                for (int i = 0; i < 100; i++) {
+                    if(i%2 == 0)
+                        System.out.println("thread3:"+i);
+                }
+            }
+        }.start();
+
+        new Thread(){
+            public void run() {
+                for (int i = 0; i < 100; i++) {
+                    if(i%2 == 0)
+                        System.out.println("thread4:"+i);
+                }
+            }
+        }.start();
+
+
         for (int i = 0; i < 100; i++) {
             if(i%2 == 0)
                 System.out.println("main:"+i);
         }
-     }
+
+    }
 }
 
 //1.创建一个继承于Thread类的子类
@@ -41,6 +63,7 @@ class MyThread1 extends Thread{
     }
 }
 
+//1.创建一个继承于Thread类的子类
 class MyThread2 extends Thread{
     //2.重写Thread的run()方法
     public void run(){
