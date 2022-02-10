@@ -28,6 +28,8 @@ package thread;
  *              线程创建时继承父线程的优先级
  *              低优先级只是获得调度的概率低，并非一定是在高优先级线程之后才被调用
  *
+ *  wait()/notify()/notifyAll()方法全部在Object类当中的额方法
+ *
  */
 public class ThreadMethod {
     public static void main(String[] args) {

@@ -1,7 +1,6 @@
 package array;
 
 import array.Method.Int_Arrays_Method;
-import array.Util.Int_Arrays_Util;
 
 /**
  * @author wanyu
@@ -17,23 +16,34 @@ import array.Util.Int_Arrays_Util;
 public class IntArrays {
     public static void main(String[] args) {
 
+        Int_Arrays_Method int_arrays_method = new Int_Arrays_Method();
+
+        Thread thread1 = new Thread(int_arrays_method);
+        Thread thread2 = new Thread(int_arrays_method);
+        Thread thread3 = new Thread(int_arrays_method);
+
+        thread1.start();
+        thread2.start();
+        thread3.start();
+
+
         //快速排序和冒泡排序比较
         //Int_Arrays_Method arrays = new Int_Arrays_Method();
         //arrays.IntArrays();
 
         //工具类调用
-        Int_Arrays_Method arrays = new Int_Arrays_Method();
-        int[] arr = arrays.IntArrays();
-
-        Int_Arrays_Util int_arrays_util = new Int_Arrays_Util();
-        int max = int_arrays_util.getMax(arr);
-        System.out.println(max);
-
-        //输出值
-        int[] arr1 = new int[]{};//地址
-        System.out.println(arr1);
-        char[] arr2 = new char[]{'a', 'b', 'c'};//abc
-        System.out.println(arr2);
+//        Int_Arrays_Method arrays = new Int_Arrays_Method();
+//        int[] arr = arrays.IntArrays();
+//
+//        Int_Arrays_Util int_arrays_util = new Int_Arrays_Util();
+//        int max = int_arrays_util.getMax(arr);
+//        System.out.println(max);
+//
+//        //输出值
+//        int[] arr1 = new int[]{};//地址
+//        System.out.println(arr1);
+//        char[] arr2 = new char[]{'a', 'b', 'c'};//abc
+//        System.out.println(arr2);
     }
 }
 

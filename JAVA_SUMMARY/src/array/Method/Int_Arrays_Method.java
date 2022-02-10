@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @author wanyu
  * @createTime 2022-02-04 16:16
  */ //方法类
-public class Int_Arrays_Method {
+public class Int_Arrays_Method implements Runnable{
 
     //生成随机大数组，比较快速排序和冒泡排序效率
     public int[] IntArrays() {
@@ -53,4 +53,8 @@ public class Int_Arrays_Method {
         return random_int;
     }
 
+    @Override
+    public void run() {
+        IntArrays();
+    }
 }
