@@ -24,7 +24,7 @@ package thread;
 public class ThreadSafe {
     public static void main(String[] args) {
         ThreadSafe threadSafe = new ThreadSafe();
-//        threadSafe.runnable();
+//      threadSafe.runnable();
         threadSafe.thread();
     }
 
