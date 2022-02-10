@@ -5,12 +5,12 @@ import java.awt.*;
 /**
  * @author wanyu
  * @createTime 2022-02-06 19:05
- *
+ * <p>
  * 包装类
- *
+ * <p>
  *  针对八种基本数据类型定义相应的引用类型—包装类（封装类）
  *  有了类的特点，就可以调用类中的方法，Java才是真正的面向对象
- *
+ * <p>
  * 基本数据类型    包装类
  * byte           Byte
  * short          Short
@@ -20,11 +20,8 @@ import java.awt.*;
  * double         Double        ⬆父类Number
  * boolean        Boolean
  * char           Character
- *
+ * <p>
  * 基本数据类型-包装类-String转换
- *
- *
- *
  */
 public class Wrapper {
     public static void main(String[] args) {
@@ -52,7 +49,7 @@ public class Wrapper {
 
 
     //基本/包装类--->String
-    public void Wrapper3(){
+    public void Wrapper3() {
         int i1 = 10;
         String str1 = i1 + "";
         Integer i2 = Integer.getInteger(str1);
@@ -66,7 +63,7 @@ public class Wrapper {
     }
 
     //包装类--->基本
-    public void Wrapper2(){
+    public void Wrapper2() {
         Integer num1 = new Integer(10);
         int i = num1.intValue();
         System.out.println(i);
@@ -77,15 +74,11 @@ public class Wrapper {
     }
 
     //基本--->包装类
-    public void Wrapper1(){
+    public void Wrapper1() {
         Integer num1 = new Integer(10);
         System.out.println(num1.toString());
 
         Float num2 = new Float(10f);
         System.out.println(num2.toString());
-
-
-
-
     }
 }

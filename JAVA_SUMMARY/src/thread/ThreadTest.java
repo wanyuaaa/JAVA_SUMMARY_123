@@ -21,19 +21,18 @@ public class ThreadTest {
 
 class ThreadTest_s extends Thread{
     private static int ticket = 100;
+    //private static Object obj = new Object();
 
-    public synchronized void run() {
-        while (true){
+    public void run() {
+        System.out.println(getName()+"准备出售");
+        synchronized (ThreadTest.class){
+            while (true){
                 if(ticket>0){
                     System.out.println(getName()+"售出票号："+ticket);
                     ticket--;
                 }else break;
 
-//            try {
-//                sleep(100);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
+            }
         }
     }
 }

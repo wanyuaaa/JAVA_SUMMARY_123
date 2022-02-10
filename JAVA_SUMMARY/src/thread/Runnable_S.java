@@ -21,7 +21,6 @@ package thread;
  *           避免了单继承的局限性
  *           多个线程可以共享同一个接口实现类的对象，非常适合多个相同线程来处理同一份资源。
  *
- *
  */
 public class Runnable_S {
     public static void main(String[] args) {
