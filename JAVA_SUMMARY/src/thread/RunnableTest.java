@@ -25,14 +25,17 @@ public class RunnableTest {
 }
 
 class RunnableTest_s implements Runnable{
-    private int ticket = 100;
-    @Override
+    private int ticket = 1000;
+    Object object=new Object();
+
     public void run() {
-        while (true){
-            if (ticket>0){
-                System.out.println(Thread.currentThread().getName()+"售出票号："+ticket);
-                ticket--;
-            }else break;
+            while (true){
+                synchronized (object){
+                if (ticket>0){
+                    System.out.println(Thread.currentThread().getName()+"售出票号："+ticket);
+                    ticket--;
+                }else break;
+            }
         }
     }
 }
