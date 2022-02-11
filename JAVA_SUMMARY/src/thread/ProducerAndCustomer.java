@@ -15,11 +15,8 @@ public class ProducerAndCustomer {
         Thread thread1 = new Thread(producer);
         Thread thread2 = new Thread(customer);
 
-        thread1.currentThread().setPriority(10);
-        thread2.currentThread().setPriority(1);
-
-        thread2.start();
         thread1.start();
+        thread2.start();
     }
 
 }
@@ -27,6 +24,8 @@ public class ProducerAndCustomer {
 class Clerk {
     static int product = 0;
     static int count = 0;
+    static ReentrantLock lock = new ReentrantLock();
+
 
     private static Clerk clerk = null;
 
@@ -42,64 +41,52 @@ class Clerk {
 
 class Customer implements Runnable {
     private Clerk clerk;
-    private ReentrantLock lock = new ReentrantLock();
 
     public Customer(Clerk clerk) {
         this.clerk = clerk;
     }
 
+    @Override
     public void run() {
         while (true) {
-            synchronized (ProducerAndCustomer.class) {
-                if (clerk.product == 0)
-                    continue;
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                if (clerk.count == 50)
-                    break;
-                lock.lock();
-                if (clerk.product> 0) {
-                    clerk.product--;
-                    clerk.count++;
-                    System.out.println("Customer消费了货物，当前剩余货物：" + clerk.product+";count:"+ clerk.count);
-                }
-                lock.unlock();
+            clerk.lock.lock();
+            if (clerk.count == 50){
+                clerk.lock.unlock();
+                break;
             }
+
+            if (clerk.product > 0) {
+                clerk.product--;
+                clerk.count++;
+                System.out.println("Customer消费了货物，当前剩余货物：" + clerk.product + ";count:" + clerk.count);
+            }
+            clerk.lock.unlock();
         }
     }
 }
 
 class Producer implements Runnable {
     private Clerk clerk;
-    private ReentrantLock lock = new ReentrantLock();
 
     public Producer(Clerk clerk) {
         this.clerk = clerk;
     }
 
+    @Override
     public void run() {
         while (true) {
-            synchronized (ProducerAndCustomer.class) {
-                if (clerk.product == 20)
-                    continue;
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-                if (clerk.count == 50)
-                    break;
-                lock.lock();
-                if (clerk.product < 20) {
-                    clerk.product ++;
-                    clerk.count++;
-                    System.out.println("producer生产了货物，当前拥有货物：" + clerk.product+";count:"+ clerk.count);
-                }
-                lock.unlock();
+            clerk.lock.lock();
+            if (clerk.count == 50){
+                clerk.lock.unlock();
+                break;
             }
+
+            if (clerk.product < 20) {
+                clerk.product++;
+                clerk.count++;
+                System.out.println("producer生产了货物，当前拥有货物：" + clerk.product + ";count:" + clerk.count);
+            }
+            clerk.lock.unlock();
         }
     }
 }
