@@ -51,6 +51,8 @@ class Customer implements Runnable {
     public void run() {
         while (true) {
             synchronized (ProducerAndCustomer.class) {
+                if (clerk.product == 0)
+                    continue;
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
@@ -81,6 +83,8 @@ class Producer implements Runnable {
     public void run() {
         while (true) {
             synchronized (ProducerAndCustomer.class) {
+                if (clerk.product == 20)
+                    continue;
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
