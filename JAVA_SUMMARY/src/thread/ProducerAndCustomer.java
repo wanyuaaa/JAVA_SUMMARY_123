@@ -1,5 +1,7 @@
 package thread;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * @author wanyu
  * @createTime 2022-02-11 1:16
@@ -40,36 +42,29 @@ class Clerk {
 
 class Customer implements Runnable {
     private Clerk clerk;
+    private ReentrantLock lock = new ReentrantLock();
 
     public Customer(Clerk clerk) {
         this.clerk = clerk;
     }
 
-    @Override
     public void run() {
         while (true) {
             synchronized (ProducerAndCustomer.class) {
-                if (clerk.count == 50){
-                    ProducerAndCustomer.class.notifyAll();
-                    break;
-                }
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
-                ProducerAndCustomer.class.notifyAll();
+                if (clerk.count == 50)
+                    break;
+                lock.lock();
                 if (clerk.product> 0) {
                     clerk.product--;
                     clerk.count++;
                     System.out.println("Customer消费了货物，当前剩余货物：" + clerk.product+";count:"+ clerk.count);
                 }
-                try {
-                    ProducerAndCustomer.class.wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
+                lock.unlock();
             }
         }
     }
@@ -77,35 +72,29 @@ class Customer implements Runnable {
 
 class Producer implements Runnable {
     private Clerk clerk;
+    private ReentrantLock lock = new ReentrantLock();
 
     public Producer(Clerk clerk) {
         this.clerk = clerk;
     }
 
-    @Override
     public void run() {
         while (true) {
             synchronized (ProducerAndCustomer.class) {
-                if (clerk.count == 50){
-                    ProducerAndCustomer.class.notifyAll();
-                    break;
-                }
                 try {
                     Thread.sleep(10);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
-                ProducerAndCustomer.class.notifyAll();
+                if (clerk.count == 50)
+                    break;
+                lock.lock();
                 if (clerk.product < 20) {
                     clerk.product ++;
                     clerk.count++;
                     System.out.println("producer生产了货物，当前拥有货物：" + clerk.product+";count:"+ clerk.count);
                 }
-                try {
-                    ProducerAndCustomer.class.wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+                lock.unlock();
             }
         }
     }
