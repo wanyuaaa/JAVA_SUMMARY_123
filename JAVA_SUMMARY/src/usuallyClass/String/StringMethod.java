@@ -1,4 +1,4 @@
-package usuallyClass;
+package usuallyClass.String;
 
 /**
  * @author wanyu

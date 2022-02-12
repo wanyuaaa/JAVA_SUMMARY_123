@@ -1,4 +1,4 @@
-package usuallyClass;
+package usuallyClass.String;
 
 import org.junit.jupiter.api.Test;
 
@@ -62,6 +62,10 @@ public class String_S {
         //2.都在对空间中开辟空间
         String s3 = new String("abc");
         String s4 = new String("abc");
+
+        String s6 = s3;
+        s3 = s3 + "abc";
+        System.out.println(s3==s6);
 
         System.out.println(s1 == s2);//true
         System.out.println(s1 == s3);//false

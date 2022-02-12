@@ -1,4 +1,4 @@
-package usuallyClass;
+package usuallyClass.String;
 
 import org.junit.jupiter.api.Test;
 
