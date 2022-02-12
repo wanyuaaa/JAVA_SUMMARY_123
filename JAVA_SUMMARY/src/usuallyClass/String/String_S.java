@@ -100,4 +100,16 @@ public class String_S {
         System.out.println(s4 == s5);//false
         System.out.println(s3 == s6);//true
     }
+
+    @Test
+    public void stringTest4(){
+        String str = null;
+        StringBuffer sb = new StringBuffer();
+        System.out.println(sb);//''
+        sb.append(str);
+        System.out.println(sb.length());//4
+        System.out.println(sb);//null
+        StringBuffer sb1 = new StringBuffer(str);
+        System.out.println(sb1);//Cannot invoke "String.length()" because "str" is null
+    }
 }
