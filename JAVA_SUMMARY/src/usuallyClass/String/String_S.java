@@ -24,6 +24,11 @@ import org.junit.jupiter.api.Test;
  * String s = new String("abc");方式创建对象，在内存中创建两个对象：
  * 一个堆空间的new()对象，另一个是char[]对应的常量池数据
  *
+ * String的不可变性：
+ *      1.当对字符串重新赋值时，需要重写指定内存区域赋值，不能使用原有value进行赋值
+ *      2.当对现有字符串进行链接操作时，也需要重写指定内存区域赋值，不能使用原有value赋值
+ *      3.当调用String的replace()方法修改指定字符或字符串时，也需要重新制定内存区域赋值，不能使用原有value进行赋值
+ *
  */
 public class String_S {
 

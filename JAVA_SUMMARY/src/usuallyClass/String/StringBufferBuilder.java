@@ -1,5 +1,7 @@
 package usuallyClass.String;
 
+import java.util.Date;
+
 /**
  * @author wanyu
  * @createTime 2022-02-12 15:59
@@ -23,7 +25,7 @@ public class StringBufferBuilder {
         String str = new String();//char[] value = new char[0];
         String str1 = new String("abc");//char[] value = new char[]{'a','b','c'};
 
-        StringBuffer sb1 =new StringBuffer();//char[] value = new char[16];
+        StringBuffer sb1 = new StringBuffer();//char[] value = new char[16];
         System.out.println(sb1.length());//0
         sb1.append('a');//value[0] = 'a';
         sb1.append('b');//value[1] = 'b';
