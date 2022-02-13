@@ -29,8 +29,12 @@ public class StringTest {
 
         //2.
         String str2 = "abcdefg";
-        String reversal = reversal(str2);
-        System.out.println("2-->" + reversal);
+        String reversal1 = reversal(str2);
+        String reversal2 = reversal(str2, 2, 5);
+        String reversal3 = reversalF(str2, 2, 5);
+        System.out.println("2.1-->" + reversal1);
+        System.out.println("2.2-->" + reversal2);
+        System.out.println("2.3-->" + reversal3);
 
         //3.
         String str3 = "ab";
@@ -86,6 +90,31 @@ public class StringTest {
             }
         }
         return compare;
+    }
+
+    private static String reversalF(String str, int start, int end) {
+
+        StringBuilder s1 = new StringBuilder(str.length());
+        s1.append(str.substring(0, start));
+
+        for (int i = end; i >= start; i--) {
+            s1.append(str.charAt(i));
+        }
+
+        s1.append(str.substring(end + 1));
+
+        return new String(s1);
+    }
+
+    private static String reversal(String str, int start, int end) {
+        char[] chars = str.toCharArray();
+        for (int i = start, j = end; i < j; i++, j--) {
+            char temp = chars[i];
+            chars[i] = chars[j];
+            chars[j] = temp;
+        }
+        String reversal = new String(chars);
+        return reversal;
     }
 
     private static String reversal(String str) {

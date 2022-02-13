@@ -2,7 +2,6 @@ package usuallyClass.Date;
 
 import org.junit.jupiter.api.Test;
 
-import java.sql.SQLData;
 import java.util.Date;
 
 /**
@@ -22,7 +21,7 @@ import java.util.Date;
  * 3.java.sql.Date<-->java.util.Date
  *
  */
-public class Date_S {
+public class Date_IDEA {
     @Test
     public void test1(){
         long time = System.currentTimeMillis();
