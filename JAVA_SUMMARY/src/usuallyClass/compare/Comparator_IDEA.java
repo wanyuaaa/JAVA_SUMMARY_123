@@ -60,6 +60,14 @@ public class Comparator_IDEA {
                 }else return -o1.name.compareTo(o2.name);
             }
         });
+
+//        Comparator<Goods> goodsComparator = new Comparator<Goods>() {
+//            @Override
+//            public int compare(Goods o1, Goods o2) {
+//                return 0;
+//            }
+//        };
+//        Arrays.sort(arr,goodsComparator);
         System.out.println(Arrays.toString(arr));
     }
 }

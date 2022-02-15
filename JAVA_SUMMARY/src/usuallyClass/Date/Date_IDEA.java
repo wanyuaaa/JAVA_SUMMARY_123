@@ -2,6 +2,7 @@ package usuallyClass.Date;
 
 import org.junit.jupiter.api.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -19,6 +20,10 @@ import java.util.Date;
  *      toString()
  *      getTime()
  * 3.java.sql.Date<-->java.util.Date
+ *
+ * java.util.date/java.sql.date(1.0) --> instant(8.0)
+ * simpleDateFormat(1.0) -->DateTimeFormatter(8.0)
+ * calendar(1.1) -->localDate/localTime/LocalDateTime(7.0/8.0)
  *
  */
 public class Date_IDEA {
