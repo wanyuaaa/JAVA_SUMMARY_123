@@ -18,14 +18,12 @@ public class ProducerAndCustomer {
         thread1.start();
         thread2.start();
     }
-
 }
 
 class Clerk {
     static int product = 0;
     static int count = 0;
     static ReentrantLock lock = new ReentrantLock();
-
 
     private static Clerk clerk = null;
 

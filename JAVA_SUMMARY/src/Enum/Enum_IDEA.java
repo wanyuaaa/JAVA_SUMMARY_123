@@ -111,21 +111,21 @@ enum Season2 implements info{
 
 //自定义枚举类
 class Season1{
-    //1.声明Season对象的属性,需要用final修饰
+    //2.声明Season对象的属性,需要用final修饰
     private final String seasonName;
     private final String seasonDesc;
 
-    //2.私有化构造器
+    //1.私有化构造器
     private Season1(String seasonName, String seasonDesc) {
         this.seasonName = seasonName;
         this.seasonDesc = seasonDesc;
     }
 
     //3.创建常量对象
-    public static final Season1 SPRING = new Season1("春天","春暖花开");
-    public static final Season1 SUMMER = new Season1("夏天","夏日炎炎");
-    public static final Season1 AUTUMN = new Season1("秋天","秋高气爽");
-    public static final Season1 WINTER = new Season1("冬天","冰天雪的");
+    public static final Season1 SPRING = new Season1("春天", "春暖花开");
+    public static final Season1 SUMMER = new Season1("夏天", "夏日炎炎");
+    public static final Season1 AUTUMN = new Season1("秋天", "秋高气爽");
+    public static final Season1 WINTER = new Season1("冬天", "冰天雪的");
 
     public String getSeasonName() {
         return seasonName;
