@@ -13,7 +13,7 @@ import java.util.*;
  * 15.API
  *
  */
-public class Collection_IDEA {
+public class Collection_API {
     @Test
     public void CollectionTest1(){
         Collection<Object> arrayList1 = new ArrayList<>();
@@ -30,8 +30,8 @@ public class Collection_IDEA {
 
         //3.addAll()：将一个集合全部元素添加到另一个集合当中
         Collection<Object> arrayList2 = new ArrayList<>();
-        arrayList1.add("d");
-        arrayList1.add("e");
+        arrayList2.add("d");
+        arrayList2.add("e");
         arrayList1.addAll(arrayList2);//<--
 
         System.out.println(arrayList1.size());
@@ -62,6 +62,32 @@ public class Collection_IDEA {
         arrayList1.removeAll(asList2);
         System.out.println(arrayList1);
 
-        //10.
+        //10.retainAll(Object obj)：交集，两个集合中的
+        Collection arrayList3 = new ArrayList<>();
+        arrayList3.add("d");
+        arrayList3.add("e");
+        //System.out.println(arrayList1.retainAll(arrayList3));//true
+        //System.out.println(arrayList1);
+
+        //11.equals()：需要当前集合和形参集合元素都相同
+        System.out.println(arrayList1.equals(arrayList3));
+
+        //12.hashCode()：返回哈希值
+        System.out.println(arrayList1.hashCode());
+
+        //13.toArray()：集合-->数组
+        Object[] objects = arrayList2.toArray();
+        //拓展：asList(Array arr)：数组-->集合
+        List<String> arrayList4 = Arrays.asList(new String[]{"aa", "bb", "cc"});
+        System.out.println(arrayList4);
+        //!添加时认为是一个元素，即数组,需用Integer或直接写创建多个对象
+        List<int[]> arrayList5 = Arrays.asList(new int[]{123,456,789});
+        System.out.println(arrayList5);
+        List<Integer> arrayList6 = Arrays.asList(123,456,789);
+        System.out.println(arrayList6);
+
+        //14.iterator()：返回iterator接口实例，用于遍历集合元素，放在IteratorTest.java测试
+        Iterator<Integer> iterator = arrayList6.iterator();
+
     }
 }
