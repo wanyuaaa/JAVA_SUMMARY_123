@@ -2,9 +2,7 @@ package aggregate;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
+import java.util.*;
 
 /**
  * @author wanyu
@@ -12,7 +10,7 @@ import java.util.Date;
  *
  * Collection
  *
- *
+ * 15.API
  *
  */
 public class Collection_IDEA {
@@ -25,6 +23,7 @@ public class Collection_IDEA {
         arrayList1.add("c");
         arrayList1.add(123);
         arrayList1.add(new Date());
+        arrayList1.add(new String("tom"));
 
         //2.size()：获取添加元素个数
         System.out.println(arrayList1.size());//5
@@ -38,13 +37,31 @@ public class Collection_IDEA {
         System.out.println(arrayList1.size());
         System.out.println(arrayList1);
 
-        //4.isEmpty()：判断集合中是否有元素
-        System.out.println(arrayList1.isEmpty());
+        //4.isEmpty()：判断集合中是否为空
+        System.out.println(arrayList1.isEmpty());//false
 
         //5.clear()：清空集合
         arrayList2.clear();
 
-        //6.
+        //6.contains(Object obj)：判断当前集合中是否包含obj,
+        System.out.println(arrayList1.contains(123));//true
+        System.out.println(arrayList1.contains("a"));//true
+        System.out.println(arrayList1.contains(new String("tom")));//true，String重写了equals()
+        System.out.println(arrayList1.contains(new Date()));//false,对象对比需要重写equals()
 
+        //7.判断形参coll中的所有元素是否都在当前集合当中
+        Collection asList1 = Arrays.asList("a", "b", "c",123);
+        System.out.println(arrayList1.containsAll(asList1));//ture
+
+        //8.remove()：移除集合中元素
+        arrayList1.remove("a");//true
+        System.out.println(arrayList1);
+
+        //9.removeAll()：移除多个集合中元素,差集
+        Collection asList2 = Arrays.asList("a", "b", "c",123);
+        arrayList1.removeAll(asList2);
+        System.out.println(arrayList1);
+
+        //10.
     }
 }
