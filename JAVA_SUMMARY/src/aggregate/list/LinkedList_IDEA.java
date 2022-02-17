@@ -1,4 +1,4 @@
-package aggregate;
+package aggregate.list;
 
 /**
  * @author wanyu
@@ -9,8 +9,6 @@ package aggregate;
  *
  * 源码分析：
  *      LinkedList list = new LinkedList();
- *
- *
  *
  *     内部声明了Node类型的first和last的属性默认值为null
  *     list.add(123),将123封装到node中，创建了node对象

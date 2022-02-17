@@ -35,7 +35,6 @@ public class Constructor {
 }
 
 class Person {
-
     String name;
     private int legs;
 

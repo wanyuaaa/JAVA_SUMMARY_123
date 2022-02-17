@@ -32,12 +32,12 @@ package aggregate;
  * Java 集合可分为 Collection 和 Map 两种体系
  *      |----Collection：存储一个一个的对象
  *          |----List：有序的，可重复的-->动态数组
- *              |----ArrayList
+ *              |----ArrayList（0.10）
  *              |----LinkedList
- *              |----Vector
+ *              |----Vector（0.10）
  *          |----Set：无序的，不可重复的-->数学集合
- *              |----HashSet
- *              |----LinkedHashSet
+ *              |----HashSet（16）
+ *                  |----LinkedHashSet
  *              |----TreeSet
  *      |----Map：双列集合，存储一对一对的数据-->函数：y=f(x)
  *              |----HashMap
