@@ -1,4 +1,4 @@
-package aggregate.set;
+package aggregate.collection.set;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,6 @@ import java.util.TreeSet;
  *      自然排序：比较两个对象是否相同的标准，compareTo()返回0，不再是equals(),实现compareTo()接口
  *      定制排序：比较两个对象是否相同的标准，compare()返回0，不再是equals(),实现compareTo()接口
  *
- *
  */
 public class TreeSet_IDEA {
     @Test
@@ -30,7 +29,6 @@ public class TreeSet_IDEA {
         //treeSet1.add("aa");
         //treeSet1.add("bb");
         //treeSet1.add(new Date());
-
         System.out.println(treeSet1);
         // class java.lang.Integer cannot be cast to class java.lang.String
     }
@@ -50,7 +48,7 @@ public class TreeSet_IDEA {
         treeSet.add(2);
         treeSet.add(3);
         treeSet.add(4);
-
+        treeSet.forEach(System.out::println);
         System.out.println(treeSet);
     }
 }

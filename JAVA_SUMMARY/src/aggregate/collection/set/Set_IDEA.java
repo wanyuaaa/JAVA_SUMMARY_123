@@ -1,4 +1,4 @@
-package aggregate.set;
+package aggregate.collection.set;
 
 import org.junit.jupiter.api.Test;
 

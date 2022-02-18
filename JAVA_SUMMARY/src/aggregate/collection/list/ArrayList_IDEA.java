@@ -1,4 +1,4 @@
-package aggregate.list;
+package aggregate.collection.list;
 
 /**
  * @author wanyu
