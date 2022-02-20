@@ -22,7 +22,7 @@ import java.util.Hashtable;
  * Map的理解：
  *  Entry:Set，无序的，不可重复的
  *      key：KeySet，无序的，不可重复的-->所在的类需要重写equals()和hashCode()
- *      values：Collection，无序的，可重复的-->所在的类需要重写equals()
+ *      values：Collection，无序的，可重复的，默认创建一个空的new Object()，并且全部指向这一个obj-->所在的类需要重写equals()
  *          一个键值对构成了一个entry对象
  *
  */
