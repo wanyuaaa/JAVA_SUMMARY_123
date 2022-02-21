@@ -1,4 +1,4 @@
-package IO;
+package IO.file;
 
 import org.junit.jupiter.api.Test;
 
