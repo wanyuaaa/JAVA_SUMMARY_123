@@ -1,11 +1,11 @@
 package Reflection;
 
+import Reflection.utilClass.Person;
 import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.Objects;
 
 /**
  * @author wanyu
@@ -29,24 +29,18 @@ import java.util.Objects;
  * 1.什么时候使用反射，为什么用反射：动态性
  * 2.反射和封装是否矛盾：不矛盾，提示
  *
- * 关于java.lang.Class类的理解
- * 1.类的加载过程
- *      程序经过javac.exe命令后，生成一个或多个字节码文件(.class结尾)，接着我们使用java.exe命令对某个字节码文件进行解释运行，
- *      相当于把某个字节码文件加载到内存中，此过程就叫类的加载。
- *      加载到内存中的类，我们成为运行时类，此时运行时类就作为一个Class的一个实例。
- *          --万事万物皆对象(对象.xx,File,URL,反射,前端,数据库)
- * 2.Class的实例就对应着一个运行时类。
+
  *
  */
 public class Reflection_IDEA {
     @Test
     public void test1(){
         //创建Person类对象
-        Person wanYu = new Person("wanYu", 28);
-
-        wanYu.age = 29;
-        System.out.println(wanYu.toString());
-        wanYu.run();
+//        Person wanYu = new Person("wanYu", 28);
+//
+//        wanYu.age = 29;
+//        System.out.println(wanYu.toString());
+//        wanYu.run();
     }
 
     @Test
@@ -85,65 +79,3 @@ public class Reflection_IDEA {
     }
 }
 
-class Person{
-    private String name;
-    int age;
-
-    public Person() {
-    }
-
-    private Person(String name) {
-        this.name = name;
-    }
-
-    public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
-
-    public void run(){
-        System.out.println("run");
-    }
-
-    private String talk(String str){
-        System.out.println("talk:"+str);
-        return "talk:"+str;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Person)) return false;
-        Person person = (Person) o;
-        return getAge() == person.getAge() && Objects.equals(getName(), person.getName());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getName(), getAge());
-    }
-}
