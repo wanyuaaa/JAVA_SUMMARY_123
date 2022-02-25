@@ -53,7 +53,7 @@ public class Person extends Creature<String> implements Comparator<String>,MyInt
     }
 
     @MyAnnotation("method")
-    public void run() throws RuntimeException{
+    public static void run() throws RuntimeException{
         System.out.println("run");
     }
 
