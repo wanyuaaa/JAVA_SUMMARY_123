@@ -32,8 +32,6 @@ import java.util.Properties;
  * （6）primitive type：基本数据类型
  * （7）void
  *
- *
- *
  */
 public class Class_IDEA {
     @Test
@@ -95,23 +93,37 @@ public class Class_IDEA {
     }
 
     @Test
-    public void test4() throws IOException {
-        //Properties用来读取核心类库
-        Properties properties = new Properties();
-        //方式一：此时文件默认在当前module下
+    public void test4(){
+        InputStream resourceAsStream = null;
+        try {
+            //Properties用来读取核心类库
+            Properties properties = new Properties();
+            //方式一：此时文件默认在当前module下
 //        FileInputStream fileInputStream = new FileInputStream("jdbc.properties");
 //        properties.load(fileInputStream);、
 
-        //方式二：使用Classloader
-        //配置文件默认识别为当前module的src下
-        ClassLoader classLoader = Class_IDEA.class.getClassLoader();
-        InputStream resourceAsStream = classLoader.getResourceAsStream("jdbc1.properties");
-        properties.load(resourceAsStream);
+            //方式二：使用Classloader
+            //配置文件默认识别为当前module的src下
+            ClassLoader classLoader = Class_IDEA.class.getClassLoader();
+            resourceAsStream = classLoader.getResourceAsStream("jdbc1.properties");
+            properties.load(resourceAsStream);
 
 
-        String user = properties.getProperty("user");
-        String passWord = properties.getProperty("passWord");
+            String user = properties.getProperty("user");
+            String passWord = properties.getProperty("passWord");
 
-        System.out.println(user+":"+passWord);
+            System.out.println(user+":"+passWord);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            if (resourceAsStream != null) {
+                try {
+                    resourceAsStream.close();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+
     }
 }
