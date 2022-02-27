@@ -47,7 +47,7 @@ public class Reflection_IDEA {
     public void test2() throws Exception {
         //反射创建Person类对象
         Class<Person> personClass = Person.class;
-        Constructor<Person> constructor = personClass.getConstructor(String.class, int.class);
+        Constructor<Person> constructor = personClass.getDeclaredConstructor(String.class, int.class);
         Person wanYu = constructor.newInstance("wanYu", 28);
         System.out.println(wanYu.toString());
 
