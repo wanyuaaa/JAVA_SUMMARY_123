@@ -4,14 +4,14 @@ package IO.internet;
  * @author wanyu
  * @create 2022-02-23 15:07
  *
- * URL的方法 openStream()：能从网络上读取数据
- * 若希望输出数据，例如向服务器端的 CGI （公共网关接口-Common Gateway Interface-的简称，是用户浏览器和服务器端的应用程序
- *  进行连接的接口）程序发送一些数据，则必须先与URL建立连接，然后才能对其进行读写，此时需要使用URLConnection 。
- * URLConnection：表示到URL所引用的远程对象的连接。当与一个URL建立连接时，首先要在一个 URL对象上通过方法openConnection()
- *  生成对应的 URLConnection对象。如果连接过程失败，将产生IOException.
+ *  URL的方法 openStream()：能从网络上读取数据
+ *  若希望输出数据，例如向服务器端的 CGI （公共网关接口-Common Gateway Interface-的简称，是用户浏览器和服务器端的应用程序
+ *   进行连接的接口）程序发送一些数据，则必须先与URL建立连接，然后才能对其进行读写，此时需要使用URLConnection 。
+ *  URLConnection：表示到URL所引用的远程对象的连接。当与一个URL建立连接时，首先要在一个 URL对象上通过方法openConnection()
+ *   生成对应的 URLConnection对象。如果连接过程失败，将产生IOException.
  *      URL netChinaRen = new URL ("http://www.atguigu.com/index.shtml");
  *      URLConnection u = netChinaRen.openConnection( );
- * 通过URLConnection对象获取的输入流和输出流，即可以与现有的CGI程序进行交互。
+ *  通过URLConnection对象获取的输入流和输出流，即可以与现有的CGI程序进行交互。
  *      public Object getContent( ) throws IOException
  *      public int getContentLength( )
  *      public String getContentType( )

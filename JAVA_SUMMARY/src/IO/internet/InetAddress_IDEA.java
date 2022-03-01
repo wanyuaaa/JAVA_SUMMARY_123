@@ -7,7 +7,7 @@ import java.net.UnknownHostException;
  * @author wanyu
  * @create 2022-02-23 10:42
  */
-public class InetAdress_IDEA {
+public class InetAddress_IDEA {
     public static void main(String[] args) {
         try {
             InetAddress byName1 = InetAddress.getByName("192.168.1.44");
