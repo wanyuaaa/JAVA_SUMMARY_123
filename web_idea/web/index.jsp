@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>万宇的初始页</title>
   </head>
   <body>
-  $END$
+  万宇的初始页
   </body>
 </html>
