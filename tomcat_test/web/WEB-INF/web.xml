@@ -9,6 +9,8 @@
         <servlet-name>HelloServlet</servlet-name>
         <!--servlet-class 是 Servlet 程序的全类名-->
         <servlet-class>com.test.HelloServlet</servlet-class>
+        <!--决定启动初始化的速度-->
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <!--servlet-mapping 标签给 servlet 程序配置访问地址-->
     <servlet-mapping>

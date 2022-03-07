@@ -7,6 +7,7 @@
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>com.test.web.RegisterServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
@@ -16,6 +17,7 @@
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>com.test.web.LoginServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
