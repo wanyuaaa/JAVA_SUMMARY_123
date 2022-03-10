@@ -33,5 +33,15 @@
     </orderEntry>
     <orderEntry type="library" exported="" name="jdk1.8" level="project" />
     <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 8.0.50" level="application_server_libraries" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/pro22-qqzone1.0/web/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/pro22-qqzone1.0/web/lib" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>
