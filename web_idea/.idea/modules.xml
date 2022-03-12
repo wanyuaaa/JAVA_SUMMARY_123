@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/pro22-qqzone1.0/pro22-qqzone1.0.iml" filepath="$PROJECT_DIR$/pro22-qqzone1.0/pro22-qqzone1.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro29-book-cart-vue-axios/pro29-book-cart-vue-axios.iml" filepath="$PROJECT_DIR$/pro29-book-cart-vue-axios/pro29-book-cart-vue-axios.iml" />
       <module fileurl="file://$PROJECT_DIR$/web_idea.iml" filepath="$PROJECT_DIR$/web_idea.iml" />
     </modules>
   </component>

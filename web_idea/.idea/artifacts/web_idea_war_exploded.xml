@@ -7,6 +7,12 @@
         <element id="directory" name="classes">
           <element id="module-output" name="web_idea" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/pro22-qqzone1.0/web/lib/gson-2.2.4.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/pro22-qqzone1.0/web/lib/druid-1.1.10.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/pro22-qqzone1.0/web/lib/kaptcha-2.3.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/pro22-qqzone1.0/web/lib/mysql-connector-java-5.1.45-bin.jar" />
+        </element>
       </element>
     </root>
   </artifact>
