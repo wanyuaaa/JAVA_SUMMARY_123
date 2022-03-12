@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置 User 对象创建-->
+    <!--第一个值 默认值，singleton，表示是单实例对象/第二个值 prototype，表示是多实例对象-->
+    <bean id="user" class="com.test.spring5.User" scope="prototype"/>
+    <!--set注入属性-->
+    <bean id="book" class="com.test.spring5.Book">
+        <!--构造方法注入-->
+        <!--<constructor-arg name="bookName" value="bc"/>-->
+        <!--使用 property 完成属性注入,name：类里面属性名称,value：向属性注入的值-->
+        <property name="bookName" value="ab"/>
+        <!--空值赋值-->
+        <property name="author">
+            <null/>
+        <!--转义-->
+        <!--<value><![CDATA[<<abc>>]]/>-->
+        </property>
+        <!--内部bean、级联嵌套-->
+        <property name="user">
+            <bean class="com.test.spring5.User"/>
+        </property>
+        <!--级联赋值-->
+        <property name="user.userName" value="abc"/>
+    </bean>
+
+<!-- p名称空间注入,set方式注入-->
+<!--<bean id="book" class="com.test.spring5.Book" p:bookName="abc"></bean>-->
+</beans>
