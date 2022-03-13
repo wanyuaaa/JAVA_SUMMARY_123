@@ -46,6 +46,20 @@ interface Human{
     String getBelief();
 
     void eat(String food);
+
+}
+
+class SuperMan implements Human{
+
+    @Override
+    public String getBelief() {
+        return "I can fly";
+    }
+
+    @Override
+    public void eat(String food) {
+        System.out.println("我喜欢吃"+food);
+    }
 }
 
 //生成动态代理
@@ -60,15 +74,15 @@ class ProxyFactory{
         Object o = Proxy.newProxyInstance(obj.getClass().getClassLoader(), obj.getClass().getInterfaces(), myInvocationHandler);
         return o;
     }
-}
 
+}
 class MyInvocationHandler implements InvocationHandler{
+
     private Object obj;//需要被代理类对象赋值
 
     public void bind(Object obj){
         this.obj = obj;
     }
-
     //当我们通过代理类的对象，调用方法a时，就会调用如下方法invoke();
     //当被代理类的方法a功能声明在invoke()中
     @Override
@@ -79,19 +93,7 @@ class MyInvocationHandler implements InvocationHandler{
 
         return invoke;
     }
-}
 
-class SuperMan implements Human{
-
-    @Override
-    public String getBelief() {
-        return "I can fly";
-    }
-
-    @Override
-    public void eat(String food) {
-        System.out.println("我喜欢吃"+food);
-    }
 }
 
 //静态代理方法

@@ -7,10 +7,6 @@ import org.springframework.stereotype.Service;
  * @createTime 2022-03-13 14:15
  */
 @Service(value = "userService")
-public class UserService {
-
-    public void say(){
-        System.out.println("service");
-    }
-
+public interface UserService {
+    void say();
 }
