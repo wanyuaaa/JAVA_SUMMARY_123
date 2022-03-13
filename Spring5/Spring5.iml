@@ -69,5 +69,6 @@
     </orderEntry>
     <orderEntry type="library" name="druid-1.1.9" level="project" />
     <orderEntry type="library" name="spring-aop-5.3.9" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

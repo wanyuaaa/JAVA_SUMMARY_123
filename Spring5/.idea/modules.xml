@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Spring5.iml" filepath="$PROJECT_DIR$/Spring5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringAop/SpringAop.iml" filepath="$PROJECT_DIR$/SpringAop/SpringAop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringJDBC/SpringJDBC.iml" filepath="$PROJECT_DIR$/SpringJDBC/SpringJDBC.iml" />
     </modules>
   </component>
 </project>
