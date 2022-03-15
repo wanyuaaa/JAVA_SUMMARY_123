@@ -9,13 +9,18 @@
                            http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!-- 自动扫描包 -->
-    <context:component-scan base-package="com.springMvc.controller"/>
+    <context:component-scan base-package="com.springMvc.*"/>
+    <!--path：设置处理的请求地址 view-name：设置请求地址所对应的视图名称-->
+    <mvc:view-controller path="/" view-name="index"/>
+    <mvc:view-controller path="/file" view-name="file"/>
+    <!--开启MVC注解驱动:解决配置映射错误-->
+    <mvc:annotation-driven/>
+    <!--开放对静态资源的访问:解决找不到js等静态资源错误-->
+    <mvc:default-servlet-handler/>
 
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/"/>
-        <property name="suffix" value=".JSP"/>
-    </bean>
 
+    <!--配置文件上传解析器，将上传的文件封装为MultipartFile-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 
     <!-- 配置Thymeleaf视图解析器 -->
     <bean id="viewResolver" class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
@@ -36,5 +41,4 @@
             </bean>
         </property>
     </bean>
-
 </beans>

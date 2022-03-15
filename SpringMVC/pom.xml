@@ -13,6 +13,7 @@
         <module>SpringMVC_DEMO_2</module>
         <module>SpringMVC_DEMO_3</module>
         <module>SpringMVC_DEMO_4</module>
+        <module>SpringMVC_DEMO_5</module>
     </modules>
 
     <properties>
