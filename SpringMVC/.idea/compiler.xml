@@ -7,8 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SpringMVC_DEMO_2" />
+        <module name="SpringMVC_DEMO_3" />
+        <module name="SpringMVC_DEMO_4" />
+        <module name="SpringMVC_DEMO_JSP" />
         <module name="SpringMVC_DEMO_1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SpringMVC_Demo1" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

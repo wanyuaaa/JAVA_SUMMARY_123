@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>index</h1><br>
+<label>HttpServletRequest:</label><a th:href="@{/testRequestByServletAPI}">跳转</a><br>
+<label>ModelAndView:</label><a th:href="@{/testModelAndView}">跳转</a><br>
+<label>Model:</label><a th:href="@{/testModel}">跳转</a><br>
+<label>Map:</label><a th:href="@{/testMap}">跳转</a><br>
+<label>ModelMap:</label><a th:href="@{/testModelMap}">跳转</a><br>
+<label>HttpSession:</label><a th:href="@{/testSession}">跳转</a><br>
+<label>ServletContext:</label><a th:href="@{/testApplication}">跳转</a><br>
+</body>
+</html>
