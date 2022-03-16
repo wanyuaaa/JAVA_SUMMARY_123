@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="SpringMVC_DEMO_JSP" />
+        <module name="SpringMVC_DEMO_1" />
         <module name="SpringMVC_DEMO_2" />
         <module name="SpringMVC_DEMO_3" />
         <module name="SpringMVC_DEMO_4" />
-        <module name="SpringMVC_DEMO_JSP" />
         <module name="SpringMVC_DEMO_5" />
-        <module name="SpringMVC_DEMO_1" />
+        <module name="SpringMVC_DEMO_FILTER" />
+        <module name="SpringMVC_DEMO_LAST" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

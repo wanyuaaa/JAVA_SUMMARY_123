@@ -7,13 +7,16 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC_DEMO_3" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC_DEMO_4" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC_DEMO_5" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_DEMO_FILTER" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVC_DEMO_JSP" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringMVC_DEMO_LAST" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/SpringMVC_DEMO_JSP/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC_DEMO_FILTER/pom.xml" />
       </list>
     </option>
   </component>

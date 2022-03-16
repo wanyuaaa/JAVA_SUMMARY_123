@@ -12,11 +12,37 @@
     <context:component-scan base-package="com.springMvc.*"/>
     <!--path：设置处理的请求地址 view-name：设置请求地址所对应的视图名称-->
     <mvc:view-controller path="/" view-name="index"/>
-    <mvc:view-controller path="/file" view-name="file"/>
     <!--开启MVC注解驱动:解决配置映射错误-->
     <mvc:annotation-driven/>
     <!--开放对静态资源的访问:解决找不到js等静态资源错误-->
     <mvc:default-servlet-handler/>
+
+    <mvc:interceptors>
+        <!--<bean class="com.springMvc.interceptor.FirstInterceptor"/>-->
+        <!--<ref bean="firstInterceptor"/>-->
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
+            <mvc:exclude-mapping path="/"/>
+            <ref bean="firstInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**/*"/>
+            <mvc:exclude-mapping path="/"/>
+            <ref bean="secondInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+<!--    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+<!--        <property name="exceptionMappings">-->
+<!--            <props>-->
+<!--                &lt;!&ndash;properties的键表示处理器方法执行过程中出现的异常-->
+<!--                    properties的值表示若出现指定异常时，设置一个新的视图名称，跳转到指定页面&ndash;&gt;-->
+<!--                <prop key="java.lang.ArithmeticException">error</prop>-->
+<!--            </props>-->
+<!--        </property>-->
+<!--        &lt;!&ndash;exceptionAttribute属性设置一个属性名，将出现的异常信息在请求域中进行共享&ndash;&gt;-->
+<!--        <property name="exceptionAttribute" value="ex"/>-->
+<!--    </bean>-->
 
     <!--配置文件上传解析器，将上传的文件封装为MultipartFile-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>

@@ -14,6 +14,8 @@
         <module>SpringMVC_DEMO_3</module>
         <module>SpringMVC_DEMO_4</module>
         <module>SpringMVC_DEMO_5</module>
+        <module>SpringMVC_DEMO_FILTER</module>
+        <module>SpringMVC_DEMO_LAST</module>
     </modules>
 
     <properties>
