@@ -12,7 +12,7 @@
 
     <plugins>
         <!--设置分页插件-->
-        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"/>
     </plugins>
 
     <environments default="development">
