@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe839292-819e-45e2-98bf-426974944aa1" name="Changes" comment="springmvc">
-      <change beforePath="$PROJECT_DIR$/SpringMVC_DEMO_LAST/src/main/java/com/springMvc/config/WebInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/SpringMVC_DEMO_LAST/src/main/java/com/springMvc/config/WebInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JAVA_SUMMARY_123" beforeDir="false" afterPath="$PROJECT_DIR$/../JAVA_SUMMARY_123" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +191,7 @@
       <workItem from="1647257729566" duration="10512000" />
       <workItem from="1647343227479" duration="15022000" />
       <workItem from="1647433832558" duration="1941000" />
+      <workItem from="1647622878558" duration="189000" />
     </task>
     <task id="LOCAL-00001" summary="springmvc">
       <created>1647281542743</created>
